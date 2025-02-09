@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8th CPC Salary Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>8th CPC Salary Calculator</h1>
+        <form id="salaryForm">
+            <label for="basicPay">7th CPC Basic Pay:</label>
+            <input type="number" id="basicPay" placeholder="E.g., 35000" required>
+
+            <label for="gradePay">7th CPC Grade Pay:</label>
+            <input type="number" id="gradePay" placeholder="E.g., 8000" required>
+
+            <label for="cityType">City Type:</label>
+            <select id="cityType" required>
+                <option value="X">X (Metro - 30% HRA)</option>
+                <option value="Y">Y (Large City - 20% HRA)</option>
+                <option value="Z">Z (Other Cities - 10% HRA)</option>
+            </select>
+
+            <button type="submit">Calculate</button>
+        </form>
+
+        <div class="results">
+            <h2>Salary Breakdown</h2>
+            <div class="result-card">
+                <h3>7th CPC Salary</h3>
+                <p>Basic Pay: ₹<span id="basic7">0</span></p>
+                <p>DA (50%): ₹<span id="da7">0</span></p>
+                <p>HRA: ₹<span id="hra7">0</span></p>
+                <p>Transport Allowance: ₹<span id="ta7">0</span></p>
+                <p class="total">Total: ₹<span id="total7">0</span></p>
+            </div>
+
+            <div class="result-card">
+                <h3>8th CPC Salary (Projected)</h3>
+                <p>Basic Pay (2.57x): ₹<span id="basic8">0</span></p>
+                <p>HRA: ₹<span id="hra8">0</span></p>
+                <p class="total">Total: ₹<span id="total8">0</span></p>
+            </div>
+
+            <div class="difference">
+                <p>Hike: <span id="hike">0%</span></p>
+                <p>Amount Difference: ₹<span id="diff">0</span></p>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="salaryChart"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
